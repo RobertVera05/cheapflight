@@ -1,7 +1,6 @@
 #imports for python script
-import os
-import sys
 import http.client
+import datetime
 
 #function for checking if url exists
 def doesUrlExist(url):
@@ -16,7 +15,9 @@ def doesUrlExist(url):
 def main():
     location = input('Enter your destination: ')
     initialDate = input('Enter the initial date:')
-    if initialDate < date.today():
+    currentDate = datetime.date.today()
+    print("Current date is :", currentDate)
+    if initialDate < currentDate:
         print('Initial date cannot be before todays date')
     endDate = input('Enter the end date:')
     print('Checking for cheapest flights between dates ', initialDate,' and ', endDate, ' to destination ', location)
