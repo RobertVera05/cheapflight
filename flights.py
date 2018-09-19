@@ -2,6 +2,8 @@
 import http.client
 import datetime
 import sys
+#import Flight module
+import Flight
 
 #function for checking if the initial date entered is invalid
 def isValidIinitialDate(initialDate):
@@ -28,6 +30,9 @@ def main():
     location = input('Enter your destination: ')
     initialDate = input('Enter the initial date:(ex. 2018-09-18)')
     returnDate = input('Enter the date you plan on returning:(ex. 2018-09-22)')
+
+    #create flight object
+    Flight.__init__(location, initialDate, returnDate)
     
     #check if the initial date is valid
     isValidDate = isValidIinitialDate(initialDate)
